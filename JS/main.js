@@ -38,10 +38,9 @@ function playerChoice(){
         if(giveChoice == null){
             continue;
         }
-        const putInLowerCase = giveChoice.toLowerCase();
-        if(options.includes(putInLowerCase)){
+        if(options.includes(giveChoice)){
             value = true;
-            return putInLowerCase;
+            return giveChoice;
         }
     }
 }
