@@ -26,28 +26,29 @@ function playRound(playerSelection, computerSelection){
     else if(result == "Player"){
         return `You Win! ${playerSelection} beats ${computerSelection}`;
     }
-    else{
+    else if (result == "Computer"){
         return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
 
 function playerChoice(){
-    const valiDate = false;
-    while(valiDate == false){
-        const MyChoice = prompt("Choose either Rock, Paper, or Scissors: ");
-        if(MyChoice == null){
+    const value = false;
+    while(value == false){
+        const giveChoice = prompt("Choose either Rock, Paper, or Scissors: ");
+        if(giveChoice == null){
             continue;
         }
-        const ChoiceInLowerCase = MyChoice.toLowerCase();
-        if(player.includes(ChoiceInLowerCase.options)){
-            valiDate = true;
-            return ChoiceInLowerCase;
+        const putInLowerCase = giveChoice.toLowerCase();
+        if(options.includes(putInLowerCase)){
+            value = true;
+            return putInLowerCase;
         }
     }
 }
 
 function game(){
     console.log("Start Game!!!!!!!")
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; i++){
@@ -60,7 +61,9 @@ function game(){
         else if(WinnerPlayerChecker(playerSelection, computerSelection) == "Computer"){
             computerScore++;
         }
+        console.log("___________________________");
     }
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
     console.log("Game Over!!!!!!!!!!!!")
     if(playerScore > computerScore){
         console.log("Congratulations!!!!!!!!!!!!!!! YOU HAVE WON THE GAME");
