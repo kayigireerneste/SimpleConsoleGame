@@ -3,6 +3,7 @@ function getComputerChoice(){
     const choice = options[Math.floor(Math.random() * options.length)];
     return choice;
 }
+getComputerChoice()
 
 function WinnerPlayerChecker(playerSelection, computerSelection){
     if(playerSelection == computerSelection){
@@ -17,6 +18,7 @@ function WinnerPlayerChecker(playerSelection, computerSelection){
         return "Computer";
     }
 }
+WinnerPlayerChecker();
 
 function playRound(playerSelection, computerSelection){
     const result = WinnerPlayerChecker(playerSelection, computerSelection);
@@ -30,6 +32,7 @@ function playRound(playerSelection, computerSelection){
         return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
+playRound()
 
 function playerChoice(){
     let value = false;
@@ -44,6 +47,7 @@ function playerChoice(){
         }
     }
 }
+playerChoice()
 
 function game(){
     console.log("Start Game!!!!!!!")
